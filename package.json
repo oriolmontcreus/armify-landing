@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.3",
     "@astrojs/check": "^0.7.0",
+    "@splinetool/viewer": "^1.8.1",
+    "astro": "^4.11.3",
     "typescript": "^5.5.2"
   }
 }

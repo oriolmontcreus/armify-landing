@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
+    "@astrojs/tailwind": "^5.1.0",
     "@splinetool/viewer": "^1.8.1",
     "astro": "^4.11.3",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
   }
 }

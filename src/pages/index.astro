@@ -40,26 +40,21 @@ import Card from "../components/Card.astro";
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
 			above.
 		</p>
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="flex justify-between w-full flex-wrap gap-5">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
+				path="/robotArms/roboarm1.webp"
+				title="test1"
 				body="Learn how Astro works and explore the official API docs."
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+			path="/robotArms/roboarm2.webp"
+			title="test2"
+			body="Learn how Astro works and explore the official API docs."
 			/>
 			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+			path="/robotArms/roboarm3.webp"
+			title="test3"
+			body="Learn how Astro works and explore the official API docs."
 			/>
 		</ul>
 	</main>
@@ -69,8 +64,8 @@ import Card from "../components/Card.astro";
 	main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
+		width: 900px;
+		max-width: calc(100% - 5rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
@@ -118,11 +113,5 @@ import Card from "../components/Card.astro";
 	}
 	.instructions strong {
 		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
 	}
 </style>

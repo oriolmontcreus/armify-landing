@@ -10,26 +10,25 @@ interface Props {
 const { path, title, body } = Astro.props;
 ---
 
-<li class="group">
-	<div class="card w-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-500 ease-in-out hover:bg-gray-700 hover:scale-105 cursor-pointer">
-		<div class="flex justify-center bg-gray-900 p-2">
+<li class="group w-full sm:max-w-full md:max-w-[45%] lg:max-w-[30%] lg:w-[30%]">
+	<div class="card w-full bg-black rounded-2xl overflow-hidden border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 shadow-lg transition-all duration-300 ease-in-out transform-gpu hover:-rotate-2 hover:scale-105 cursor-pointer relative z-20">
+		<div class="flex justify-center bg-slate-950 p-2">
 			<Image 
 				src={path}
 				alt={title}
-				width={200}
-				height={150}
-				class="w-[200px] h-[150px] object-contain transition-all duration-500 ease-in-out group-hover:grayscale group-hover:blur-sm"
+				width={400}
+				height={300}
+				loading="lazy"
+				class="w-full h-auto object-contain transition-all duration-300 ease-in-out"
 			/>
 		</div>
 		<div class="p-4 relative">
-			<h2 class="text-lg font-semibold text-white mb-2 transition-all duration-500 ease-in-out group-hover:text-blue-400">
+			<h2 class="text-lg font-semibold text-white mb-2 transition-all duration-300 ease-in-out group-hover:text-blue-400">
 				{title}
 			</h2>
-			<p class="text-sm text-gray-400 transition-all duration-500 ease-in-out group-hover:text-gray-300">
+			<p class="text-sm text-gray-400 transition-all duration-300 ease-in-out group-hover:text-gray-300">
 				{body}
 			</p>
-			<div class="absolute top-0 right-4 transform -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:translate-x-2">
-			</div>
 		</div>
 	</div>
 </li>

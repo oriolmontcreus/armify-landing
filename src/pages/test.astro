@@ -1,0 +1,12 @@
+---
+import FlipWords from "../components/FlipWords";
+
+const words = ["faster", "smarter", "stronger", "sleeker"];
+---
+<div class="h-[40rem] flex justify-center items-center px-4 bg-white dark:bg-gray-900">
+  <div class="text-7xl mx-auto font-bold text-neutral-800 dark:text-neutral-100 leading-tight tracking-tight">
+    Build
+    <FlipWords words={words} client:load /> <br />
+    automation with <span class="text-indigo-600 dark:text-indigo-400">Armify</span> products
+  </div>
+</div>

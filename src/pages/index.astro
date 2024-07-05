@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card from "@components/Card.astro";
+import FlipWords  from "@components/FlipWords";
+
+const words = ["faster", "smarter", "stronger", "sleeker"];
 ---
 
 <Layout title="Landing page (change this)">
@@ -20,14 +23,13 @@ import Card from "../components/Card.astro";
 			style="user-select: none;"
 		>
 			<div class="max-w-2xl">
-				<h1
-					class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-center lg:text-left text-white"
-				>
-					Welcome to <span
-						class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-						>Armify</span
-					>
-				</h1>
+				<div class="h-[20rem] flex justify-center items-center px-4 bg-white dark:bg-gray-900 rounded-2xl">
+					<div class="text-7xl mx-auto font-bold text-neutral-800 dark:text-neutral-100 leading-tight tracking-tight">
+					  Build
+					  <FlipWords words={words} client:load /> <br />
+					  automation with <span class="text-indigo-600 dark:text-indigo-400">Armify</span> products
+					</div>
+				  </div>
 				<p
 					class="mt-3 text-lg sm:text-xl max-w-md mx-auto lg:mx-0 text-center lg:text-left text-white"
 				>
@@ -36,7 +38,7 @@ import Card from "../components/Card.astro";
 				</p>
 				<div class="mt-8 flex justify-center lg:justify-start">
 					<a
-						href="#"
+						href="#products"
 						class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out z-20"
 					>
 						Explore Our Products
@@ -47,11 +49,12 @@ import Card from "../components/Card.astro";
 	</div>
 </Layout>
 <main>
-	<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-	<p class="instructions">
-	  To get started, open the directory <code>src/pages</code> in your project.<br />
-	  <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+	<h1 class="text-4xl font-bold mb-6 text-center animate-fade-in-up" id="products">Discover Our Superior Robotic Arms</h1>
+	<p class="mb-12 text-center animate-fade-in-up delay-100">
+	  Dive into our range of advanced robotic arms, engineered for revolutionizing industrial automation.<br />
+	  <strong class="text-pink-500">Experience the future:</strong> Explore each model to elevate your operations.
 	</p>
+
 	<ul role="list" class="flex justify-between items-stretch w-full flex-wrap gap-5">
 		<Card
 			path="/robotArms/roboarm1.webp"

@@ -37,20 +37,33 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
-		background-size: 224px;
 		overflow-y: scroll;
 		scrollbar-width: thin;
-		scrollbar-color: #000000 transparent;
+		scrollbar-color: #2a2b2f #13151a;
 		color-scheme: dark;
 		scroll-behavior: smooth;
 		scroll-padding-top: 100px;
 	}
 	html::-webkit-scrollbar {
-		width: 2px;
-		background-color: transparent;
+		width: 8px;
+	}
+	html::-webkit-scrollbar-track {
+		background: #13151a;
+		border-radius: 10px;
 	}
 	html::-webkit-scrollbar-thumb {
-		background-color: #000000;
+		background-color: #2a2b2f;
+		border-radius: 10px;
+		border: 2px solid #13151a;
+	}
+	/* Firefox */
+	html {
+		scrollbar-width: thin;
+		scrollbar-color: #2a2b2f #13151a;
+	}
+
+	body {
+		font-family: "Poppins", sans-serif;
 	}
 	code {
 		font-family:
@@ -62,9 +75,5 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
-	}
-
-	body {
-		font-family: "Poppins", sans-serif;
 	}
 </style>

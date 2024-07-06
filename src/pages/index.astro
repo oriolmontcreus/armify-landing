@@ -11,12 +11,12 @@ const words = ["faster", "smarter", "stronger", "sleeker"];
 		type="module"
 		src="https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js"
 	></script>
-	<div class="relative w-screen h-screen overflow-hidden">
-		<d iv class="absolute inset-0 z-10">
+	<div class="relative w-full h-screen overflow-hidden">
+		<div class="absolute inset-0 z-10">
 			<spline-viewer
 				url="https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode"
 			></spline-viewer>
-		</d>
+		</div>
 
 		<div
 			class="absolute inset-0 flex items-center justify-center lg:justify-start p-8 lg:p-16"
@@ -48,43 +48,33 @@ const words = ["faster", "smarter", "stronger", "sleeker"];
 		</div>
 	</div>
 </Layout>
-<main>
-	<h1 class="text-4xl font-bold mb-6 text-center animate-fade-in-up" id="products">Discover Our Superior Robotic Arms</h1>
-	<p class="mb-12 text-center animate-fade-in-up delay-100">
-	  Dive into our range of advanced robotic arms, engineered for revolutionizing industrial automation.<br />
-	  <strong class="text-pink-500">Experience the future:</strong> Explore each model to elevate your operations.
-	</p>
+<main class="px-16 sm:px-28 md:px-28 lg:px-28 xl:px-56 py-8 sm:py-12 md:py-16">
+    <h1 class="text-4xl font-bold mb-6 text-center animate-fade-in-up" id="products">Discover Our Superior Robotic Arms</h1>
+    <p class="mb-12 text-center animate-fade-in-up delay-100">
+        Dive into our range of advanced robotic arms, engineered for revolutionizing industrial automation.<br />
+        <strong class="text-pink-500">Experience the future:</strong> Explore each model to elevate your operations.
+    </p>
 
-	<ul role="list" class="flex justify-between items-stretch w-full flex-wrap gap-5">
-		<Card
-			path="/robotArms/roboarm1.webp"
-			title="ABB IRB 6700"
-			body="Learn how the ABB IRB 6700 excels in heavy-duty applications."
-		/>
-		<Card
-			path="/robotArms/roboarm2.webp"
-			title="Fanuc M-20iA"
-			body="Explore the capabilities of the Fanuc M-20iA for high-speed operations."
-		/>
-		<Card
-			path="/robotArms/roboarm3.webp"
-			title="Kuka KR 6"
-			body="Discover the power of the Kuka KR 6 for precise automation tasks."
-		/>
-	</ul>
-  </main>
+    <ul role="list" class="flex justify-between items-stretch w-full flex-wrap gap-5">
+        <Card
+            path="/robotArms/roboarm1.webp"
+            title="ABB IRB 6700"
+            body="Learn how the ABB IRB 6700 excels in heavy-duty applications."
+        />
+        <Card
+            path="/robotArms/roboarm2.webp"
+            title="Fanuc M-20iA"
+            body="Explore the capabilities of the Fanuc M-20iA for high-speed operations."
+        />
+        <Card
+            path="/robotArms/roboarm3.webp"
+            title="Kuka KR 6"
+            body="Discover the power of the Kuka KR 6 for precise automation tasks."
+        />
+    </ul>
+</main>
 
 <style>
-	main {
-		margin: auto;
-		padding: 10rem;
-		width: 100%;
-		max-width: calc(100% - 10rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
 	.astro-a {
 		position: absolute;
 		top: -32px;

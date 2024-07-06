@@ -1,35 +1,9 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import testimonials from "@content/testimonials";
+import type { Testimonial } from 'src/types/Testimonial';
 
-const testimonials = [
-  {
-    id: 1,
-    name: "John Doe",
-    role: "Operations Manager at Tech Innovators Inc.",
-    text: "Our production line efficiency has skyrocketed since integrating Armify's robotic arms. The advanced AI and machine learning capabilities ensure precision and adaptability like we've never seen before."
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    role: "CEO of Custom Solutions Ltd.",
-    text: "Armify offered us a tailored automation solution that perfectly fits our unique manufacturing needs. Their team's expertise and willingness to adapt to our requirements made all the difference."
-  },
-  {
-    id: 3,
-    name: "Carlos Garcia",
-    role: "Sustainability Officer at Green Manufacturing Co.",
-    text: "We chose Armify not just for their superior robotic arms, but also for their commitment to sustainability. Their eco-friendly designs have significantly reduced our environmental footprint."
-  },
-  {
-    id: 4,
-    name: "Alex Rivera",
-    role: "Head of R&D at Future Tech Dynamics",
-    text: "Innovation is at the core of our business, and Armify's robotic arms have been pivotal in pushing our research and development forward. Their cutting-edge technology has allowed us to gain a competitive edge in the industry."
-  }
-];
-
-//TODO: REFACTOR + TYPES
-const TestimonialCard = ({ testimonial }: any) => {
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 });
   
@@ -43,7 +17,6 @@ const TestimonialCard = ({ testimonial }: any) => {
       >
         <motion.div
           className="p-6"
-          whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
         >
           <p className="text-lg mb-4">"{testimonial.text}"</p>
@@ -56,10 +29,10 @@ const TestimonialCard = ({ testimonial }: any) => {
     );
   };
   
-  const Testimonials = () => {
+const Testimonials = () => {
     return (
       <div className="text-white p-8">
-        <h2 className="text-3xl font-bold text-center mb-10">Testimonials</h2>
+        <h2 className="text-3xl font-bold text-center mb-10">Read about our Testimonials</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
@@ -69,4 +42,4 @@ const TestimonialCard = ({ testimonial }: any) => {
     );
   };
   
-  export default Testimonials;
+export default Testimonials;

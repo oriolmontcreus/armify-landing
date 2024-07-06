@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 import FlipWords from "@components/FlipWords";
+import Testimonials from '@components/Testimonials';
 import WhyChooseUs from "@sections/WhyChooseUs";
 
 //Props
@@ -81,7 +82,7 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 		>
 			Discover our
 			<span class="relative inline-block">
-				<span class="relative z-10 border-b-4 border-indigo-400"
+				<span class="relative z-10 border-b-4 border-indigo-500"
 					>Superior Robotic Arms</span
 				>
 			</span>
@@ -111,6 +112,7 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 				body="Discover the power of the Kuka KR 6 for precise automation tasks."
 			/>
 		</ul>
+		<Testimonials client:load />
 	</main>
 </Layout>
 <style>

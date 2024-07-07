@@ -4,6 +4,7 @@ import Card from "@components/Card.astro";
 import FlipWords from "@components/FlipWords";
 import Testimonials from '@components/Testimonials';
 import WhyChooseUs from "@sections/WhyChooseUs";
+import Navbar from "@components/Navbar.astro";
 
 //Props
 const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
@@ -20,7 +21,7 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 				url="https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode"
 			></spline-viewer>
 		</div>
-
+		<Navbar/>
 		<div
 		class="absolute inset-0 flex items-center justify-center lg:justify-start p-8 lg:p-16 z-30 md:z-auto"
 		style="user-select: none;"

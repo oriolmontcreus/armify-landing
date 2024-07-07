@@ -47,25 +47,13 @@ const { title } = Astro.props;
 	html {
 		background: #13151a;
 		color-scheme: dark;
+		scroll-behavior: smooth;
+		scroll-padding-top: 60px;
+		scrollbar-width: thin;
+		scrollbar-color: #2a2b2f #13151a;
 	}
 	body {
 		font-family: "Poppins", sans-serif;
-	}
-	.content-wrapper {
-		scroll-behavior: smooth;
-		scroll-padding-top: 60px;
-	}
-	.content-wrapper::-webkit-scrollbar {
-		width: 8px;
-	}
-	.content-wrapper::-webkit-scrollbar-track {
-		background: #13151a;
-		border-radius: 10px;
-	}
-	.content-wrapper::-webkit-scrollbar-thumb {
-		background-color: #2a2b2f;
-		border-radius: 10px;
-		border: 2px solid #13151a;
 	}
 	/* For Firefox */
 	.content-wrapper {

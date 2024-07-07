@@ -15,11 +15,10 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 		src="https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js"
 	></script>
 	<div class="relative w-full h-screen">
-		<a href="https://bento.me/omont-dev" target="_blank" class="block">
-			<div class="bg-gray-900 border-2 border-gray-800 rounded-lg p-2 text-sm text-white absolute
-			bottom-5 right-5 z-50 flex items-center justify-center transition-transform duration-200 hover:scale-105">
-				<span>Made by<span class="link-primary text-indigo-400"> Oriol M.</span></span>
-			</div>
+		<a href="https://bento.me/omont-dev" target="_blank" class="block focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="Website of Oriol M." id="made-by">
+		  <div class="bg-gray-900 border-2 border-gray-800 rounded-lg p-2 text-sm text-white absolute bottom-5 right-5 z-50 flex items-center justify-center transition-transform duration-200 hover:scale-105">
+			<span>Made by <span class="link-primary text-indigo-400">Oriol M.</span></span>
+		  </div>
 		</a>
 		<div class="absolute inset-0 z-10">
 			<spline-viewer
@@ -78,7 +77,7 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 	</div>
 	<main
 		class="px-16 sm:px-28 md:px-28 lg:px-28 xl:px-56 py-8 sm:py-12 md:py-16"
-	>
+		aria-label="Main website content">
 	<section class="py-16" id='why-choose-us'>
 		<WhyChooseUs client:load />
 	</section>

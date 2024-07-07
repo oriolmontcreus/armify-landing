@@ -1,0 +1,53 @@
+---
+// No need to import motion anymore
+---
+<h2 class="text-3xl font-bold text-center mb-10">Contact us</h2>
+<div class="flex items-center justify-center h-full py-20 bg-gray-900 md:m-8 rounded-lg shadow-lg">
+  <div class="w-full max-w-md">
+    <form class="px-8">
+      <div class="mb-4">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="name">
+          Name
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 text-white"
+          id="name"
+          type="text"
+          placeholder="Your Name"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="email">
+          Email
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 text-white"
+          id="email"
+          type="email"
+          placeholder="your@email.com"
+          required
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="message">
+          Message
+        </label>
+        <textarea
+          class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 text-white h-32 resize-none"
+          id="message"
+          placeholder="Your message here..."
+          required
+        ></textarea>
+      </div>
+      <div class="flex items-center justify-center">
+        <button
+          class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

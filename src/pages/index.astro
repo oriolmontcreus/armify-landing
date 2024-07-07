@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
+import ContactForm from '@components/ContactForm.astro';
 import FlipWords from "@components/FlipWords";
 import Testimonials from '@components/Testimonials';
 import WhyChooseUs from "@sections/WhyChooseUs";
@@ -123,6 +124,10 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 
 		<section class="py-16" id="testimonials">
 		<Testimonials client:load />
+		</section>
+
+		<section class="py-16" id="contact">
+		<ContactForm />
 		</section>
 	</main>
 </Layout>

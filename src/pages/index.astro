@@ -6,6 +6,8 @@ import FlipWords from "@components/FlipWords";
 import Testimonials from '@components/Testimonials';
 import WhyChooseUs from "@sections/WhyChooseUs";
 
+import { motion } from 'framer-motion';
+
 //Props
 const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 ---
@@ -101,25 +103,54 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 		</p>
 
 		<ul
-			role="list"
-			class="flex justify-between items-stretch w-full flex-wrap gap-5"
-		>
-			<Card
-				path="/robotArms/roboarm1.webp"
-				title="ABB IRB 6700"
-				body="Learn how the ABB IRB 6700 excels in heavy-duty applications."
-			/>
-			<Card
-				path="/robotArms/roboarm2.webp"
-				title="Fanuc M-20iA"
-				body="Explore the capabilities of the Fanuc M-20iA for high-speed operations."
-			/>
-			<Card
-				path="/robotArms/roboarm3.webp"
-				title="Kuka KR 6"
-				body="Discover the power of the Kuka KR 6 for precise automation tasks."
-			/>
-		</ul>
+      role="list"
+      class="flex relative justify-between items-stretch w-full flex-wrap gap-5"
+    >
+      <motion.img
+        src="annotations/annotation1.svg"
+        className="absolute -top-28 -left-36 hidden 2xl:block aspect-video"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        client:load
+      />
+      <Card
+        path="/robotArms/roboarm1.webp"
+        title="ABB IRB 6700"
+        body="Learn how the ABB IRB 6700 excels in heavy-duty applications."
+      />
+
+      <motion.img
+        src="annotations/annotation2.svg"
+        className="absolute -top-28 left-[1100px] hidden 2xl:block aspect-video"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        client:load
+      />
+      <Card
+        path="/robotArms/roboarm2.webp"
+        title="Fanuc M-20iA"
+        body="Explore the capabilities of the Fanuc M-20iA for high-speed operations."
+      />
+
+      <motion.img
+        src="annotations/annotation3.svg"
+        className="absolute top-[530px] left-[250px] hidden 2xl:block aspect-video"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        client:load
+      />
+      <Card
+        path="/robotArms/roboarm3.webp"
+        title="Kuka KR 6"
+        body="Discover the power of the Kuka KR 6 for precise automation tasks."
+      />
+    </ul>
 		</section>
 
 		<section class="py-16" id="testimonials">

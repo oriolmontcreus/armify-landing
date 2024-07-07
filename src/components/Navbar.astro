@@ -1,13 +1,10 @@
 ---
-import { motion } from "framer-motion";
-
 const navItems = [
   { name: "Why Choose Us", href: "#why-choose-us" },
   { name: "Products", href: "#products" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
-
 ---
 
 <nav class="fixed top-0 left-0 w-[100vw] bg-gray-900 bg-opacity-80 shadow-md z-50 backdrop-filter backdrop-blur-lg">
@@ -18,15 +15,15 @@ const navItems = [
       </div>
       
       <div class="hidden md:flex items-center">
-              {navItems.map((item) => (
-                <a
-                  href={item.href}
-                  class="ml-8 py-2 px-4 text-gray-100 bg-transparent hover:bg-gray-800  transition duration-150 ease-in-out rounded"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="ml-8 py-2 px-4 text-gray-100 bg-transparent hover:bg-gray-800 transition duration-150 ease-in-out rounded"
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
       
       <div class="md:hidden flex items-center">
         <button id="menuBtn" class="text-gray-100 hover:text-gray-300 focus:outline-none">
@@ -38,12 +35,9 @@ const navItems = [
     </div>
   </div>
   
-  <motion.div
+  <div
     id="mobileMenu"
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 0, y: -50 }}
-    transition={{ duration: 0.3 }}
-    className="absolute top-16 left-0 w-full md:hidden bg-gray-900 hidden"
+    class="absolute top-16 left-0 w-full bg-gray-900 bg-opacity-80 shadow-md backdrop-filter backdrop-blur-lg md:hidden hidden transition-all duration-300 ease-in-out opacity-0 transform -translate-y-4"
   >
     {navItems.map((item) => (
       <a
@@ -53,7 +47,7 @@ const navItems = [
         {item.name}
       </a>
     ))}
-  </motion>
+  </div>
 </nav>
 
 <script>
@@ -67,11 +61,11 @@ const navItems = [
       isOpen = !isOpen;
       if (isOpen) {
         mobileMenu.classList.remove("hidden");
-        mobileMenu.style.opacity = "1";
-        mobileMenu.style.transform = "translateY(0)";
+        setTimeout(() => {
+          mobileMenu.classList.remove("opacity-0", "-translate-y-4");
+        }, 10);
       } else {
-        mobileMenu.style.opacity = "0";
-        mobileMenu.style.transform = "translateY(-50px)";
+        mobileMenu.classList.add("opacity-0", "-translate-y-4");
         setTimeout(() => {
           mobileMenu.classList.add("hidden");
         }, 300);

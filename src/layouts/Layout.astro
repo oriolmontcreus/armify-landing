@@ -1,5 +1,7 @@
 ---
 import "@fontsource/poppins";
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -19,7 +21,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Navbar />
+		<div class="content-wrapper">
+			<slot />
+		</div>
+		<Footer/>
 	</body>
 </html>
 <style is:global>
@@ -39,34 +45,32 @@ const { title } = Astro.props;
 		color: #ffffff;
 	}
 	html {
-		font-family: system-ui, sans-serif;
 		background: #13151a;
-		overflow-y: scroll;
-		scrollbar-width: thin;
-		scrollbar-color: #2a2b2f #13151a;
 		color-scheme: dark;
+	}
+	body {
+		font-family: "Poppins", sans-serif;
+	}
+	.content-wrapper {
 		scroll-behavior: smooth;
 		scroll-padding-top: 60px;
 	}
-	html::-webkit-scrollbar {
+	.content-wrapper::-webkit-scrollbar {
 		width: 8px;
 	}
-	html::-webkit-scrollbar-track {
+	.content-wrapper::-webkit-scrollbar-track {
 		background: #13151a;
 		border-radius: 10px;
 	}
-	html::-webkit-scrollbar-thumb {
+	.content-wrapper::-webkit-scrollbar-thumb {
 		background-color: #2a2b2f;
 		border-radius: 10px;
 		border: 2px solid #13151a;
 	}
-	/* Firefox */
-	html {
+	/* For Firefox */
+	.content-wrapper {
 		scrollbar-width: thin;
 		scrollbar-color: #2a2b2f #13151a;
-	}
-	body {
-		font-family: "Poppins", sans-serif;
 	}
 	code {
 		font-family:

@@ -4,13 +4,12 @@ import Card from "@components/Card.astro";
 import FlipWords from "@components/FlipWords";
 import Testimonials from '@components/Testimonials';
 import WhyChooseUs from "@sections/WhyChooseUs";
-import Navbar from "@components/Navbar.astro";
 
 //Props
 const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 ---
 
-<Layout title="Landing page (change this)">
+<Layout title="Landing page (change this)" >
 	<script
 		type="module"
 		src="https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js"
@@ -20,8 +19,7 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 			<spline-viewer
 				url="https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode"
 			></spline-viewer>
-		</div>
-		<Navbar/>
+		</div>	
 		<div
 		class="absolute inset-0 flex items-center justify-center lg:justify-start p-8 lg:p-16 z-30 md:z-auto"
 		style="user-select: none;"
@@ -120,55 +118,4 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 		<Testimonials client:load />
 		</section>
 	</main>
-	<footer class="footer footer-center text-base-content p-4 text-center border-t border-indigo-500">
-		<aside>
-		  <p>Designed and built by <a href="https://bento.me/omont-dev" target="_blank" class="link-primary text-indigo-400">Oriol Mont Creus</a></p>
-		</aside>
-	  </footer>
 </Layout>
-<style>
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(
-			rgba(var(--accent-dark), 66%),
-			rgba(var(--accent-dark), 33%)
-		);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-</style>

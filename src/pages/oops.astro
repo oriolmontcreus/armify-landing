@@ -1,33 +1,10 @@
 ---
-const authorName = "Oriol Mont Creus";
-const redirectUrl = "https://bento.me/omont-dev";
+import Layout from '../layouts/Layout.astro';
+import OopsContent from '@components/OopsContent';
 ---
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armify - Oops Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
-    <div class="max-w-2xl mx-auto p-8">
-        <h1 class="text-4xl font-bold mb-6 text-red-500">Oops... looks like you clicked something.</h1>
-        
-        <p class="mb-8 text-lg">
-            It seems you've stumbled upon a page that doesn't quite exist yet. Don't worry, though – it's all part of the adventure! This website is a <strong class="text-indigo-400">project showcase</strong>, not a real company. <strong class="text-indigo-400">Armify might sound cool, but it's just a figment of our imagination</strong>.
-        </p>
-        
-        <p class="mb-8 text-lg">
-            While Armify isn't real, <strong class="text-indigo-400">I certainly am!</strong> I'm <strong class="text-indigo-400">{authorName}</strong>, the creator of this project. If you're curious about my work or want to see more of my projects, feel free to check out my website and social media.
-        </p>
-        
-        <a href="/" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300 mr-4">
-            Go back
-        </a>
-        <a href={redirectUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">
-            Visit my Bento.me
-        </a>
-    </div>
-</body>
-</html>
+<Layout title="Armify - Robotic Arms">
+  <main class="flex items-center justify-center min-h-screen">
+    <OopsContent client:load />
+  </main>
+</Layout>

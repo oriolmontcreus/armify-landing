@@ -8,7 +8,7 @@ const OopsContent = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h1 className="text-4xl font-bold mb-6 text-red-500">
+      <h1 className="text-4xl font-bold mb-6 text-red-500 mt-10">
         Oops... looks like you clicked something.
       </h1>
       

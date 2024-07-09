@@ -162,30 +162,45 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 </Layout>
 
 <script>
-    function loadSplineViewer() {
-        if (window.innerWidth >= 768) {
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = 'https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js';
-            document.head.appendChild(script);
+    let splineViewer: HTMLElement & { url: string } | null = null;
 
-            script.onload = () => {
-                const SplineViewer = customElements.get('spline-viewer') as {
-                    new (): HTMLElement & { url: string };
-                };
-                
-                if (SplineViewer) {
-                    const splineViewer = new SplineViewer();
-                    splineViewer.url = 'https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode';
+    function loadSplineViewer() {
+        const container = document.getElementById('spline-container');
+        if (!container) return;
+
+        if (window.innerWidth >= 768) {
+            if (!splineViewer) {
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = 'https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js';
+                document.head.appendChild(script);
+
+                script.onload = () => {
+                    const SplineViewer = customElements.get('spline-viewer') as {
+                        new (): HTMLElement & { url: string };
+                    };
                     
-                    const container = document.getElementById('spline-container');
-                    if (container) {
+                    if (SplineViewer) {
+                        splineViewer = new SplineViewer();
+                        splineViewer.url = 'https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode';
                         container.appendChild(splineViewer);
                     }
-                }
-            };
+                };
+            } else if (!container.contains(splineViewer)) {
+                container.appendChild(splineViewer);
+            }
+        } else {
+            if (splineViewer && container.contains(splineViewer)) {
+                container.removeChild(splineViewer);
+            }
         }
     }
+
     loadSplineViewer();
-    window.addEventListener('resize', loadSplineViewer);
+
+    let resizeTimer: number;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(loadSplineViewer, 250) as unknown as number;
+    });
 </script>

@@ -12,22 +12,17 @@ import { motion } from 'framer-motion';
 const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 ---
 
-<Layout title="Armify - Robotic Arms" >
-	<script
-		type="module"
-		src="https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js"
-	></script>
+<Layout title="Armify - Robotic Arms">
 	<div class="relative w-full h-screen">
 		<a href="https://bento.me/omont-dev" target="_blank" class="block focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="Website of Oriol M." id="made-by">
 		  <div class="bg-gray-900 border-2 border-gray-800 rounded-lg p-2 text-sm text-white absolute bottom-5 right-5 z-40 flex items-center justify-center transition-transform duration-200 hover:scale-105">
 			<span>Made by <span class="link-primary text-indigo-400">Oriol M.</span></span>
 		  </div>
 		</a>
-		<div class="absolute inset-0 z-10">
-			<spline-viewer
-				url="https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode"
-			></spline-viewer>
-		</div>	
+		<div id="spline-container" class="absolute inset-0 z-10">
+			<!-- Spline viewer will be inserted here if screen is large enough -->
+		</div>
+	</div>
 		<div
 		class="absolute inset-0 flex items-center justify-center lg:justify-start p-8 lg:p-16 z-30 md:z-auto"
 		style="user-select: none;"
@@ -165,3 +160,32 @@ const words: string[] = ["faster", "smarter", "stronger", "sleeker"];
 		</section>
 	</main>
 </Layout>
+
+<script>
+    function loadSplineViewer() {
+        if (window.innerWidth >= 768) {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@splinetool/viewer@1.8.1/build/spline-viewer.js';
+            document.head.appendChild(script);
+
+            script.onload = () => {
+                const SplineViewer = customElements.get('spline-viewer') as {
+                    new (): HTMLElement & { url: string };
+                };
+                
+                if (SplineViewer) {
+                    const splineViewer = new SplineViewer();
+                    splineViewer.url = 'https://prod.spline.design/E5SZNJfYrqlK6tyt/scene.splinecode';
+                    
+                    const container = document.getElementById('spline-container');
+                    if (container) {
+                        container.appendChild(splineViewer);
+                    }
+                }
+            };
+        }
+    }
+    loadSplineViewer();
+    window.addEventListener('resize', loadSplineViewer);
+</script>
